@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 import { userRouter } from './routes/users.js';
+import { photoRouter } from './routes/photos.js';
 
 const app = express();
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use(
 );
 
 app.use('/users', userRouter);
+app.use('/photos', photoRouter);
 
 mongoose
   .connect(

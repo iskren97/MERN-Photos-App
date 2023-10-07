@@ -4,8 +4,6 @@ import PhotoModel from '../models/Photos.js';
 const router = express.Router();
 
 router.post('/upload', async (req, res) => {
-  console.log(req.body);
-
   try {
     const photo = new PhotoModel(req.body);
 
