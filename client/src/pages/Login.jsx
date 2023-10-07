@@ -22,9 +22,12 @@ const Login = () => {
         password,
       });
 
-      console.log(response);
       setCookies('access_token', response.data.token);
       window.localStorage.setItem('userID', response.data.user._id);
+      window.localStorage.setItem(
+        'currentUser',
+        JSON.stringify(response.data.user)
+      );
       alert('Success');
       navigate('/profile');
     } catch (error) {
