@@ -31,3 +31,34 @@ code {
 .header a:hover {
   text-decoration: underline;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 30px 40px;
+  width: 300px;
+  color: white;
+  background: rgb(76, 141, 245);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.form input {
+  padding: 5px 40px 5px 40px;
+  border-radius: 3px;
+  border: none;
+}
+.form label {
+  font-weight: lighter;
+}
+
+.form button {
+  border: none;
+  padding: 10px 25px 15px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+}
