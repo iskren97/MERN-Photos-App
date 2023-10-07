@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+import { userRouter } from './routes/users.js';
+
 const app = express();
 app.use(express.json());
 
@@ -13,6 +15,8 @@ app.use(
     origin: 'http://localhost:5173',
   })
 );
+
+app.use('/users', userRouter);
 
 mongoose
   .connect(
