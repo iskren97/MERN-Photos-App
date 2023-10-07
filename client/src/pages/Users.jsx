@@ -1,7 +1,33 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const Users = () => {
-  return <div>Users</div>;
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = async (e) => {
+    try {
+      const { data } = await axios.get('/users');
+      setUsers(data);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  console.log(users);
+
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h1>Users</h1>
+
+      <ul>
+        {users.map((user) => {
+          return <li>{user.email}</li>;
+        })}
+      </ul>
+    </div>
+  );
 };
 
 export default Users;
