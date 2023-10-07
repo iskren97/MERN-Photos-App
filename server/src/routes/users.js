@@ -29,10 +29,10 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    const user = await UserModel.findOne({ username });
+    const user = await UserModel.findOne({ email });
 
     if (!user) {
       throw new Error('User not found');
