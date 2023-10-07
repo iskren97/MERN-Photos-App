@@ -1,7 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const Header = () => {
+  const [cookies, setCookies] = useCookies(['access_token']);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setCookies('access_token', '');
+    window.localStorage.removeItem('userID');
+    navigate('/login');
+  };
+
+  console.log(cookies);
+
   return (
     <div className="header">
       <h1>App Name</h1>
@@ -13,10 +25,16 @@ const Header = () => {
         <Link to={'/Contacts'}>Contacts</Link>
       </div>
 
-      <div>
-        <Link to={'/login'}>Login</Link>
-        <Link to={'/register'}>Register</Link>
-      </div>
+      {!cookies.access_token ? (
+        <div>
+          <Link to={'/login'}>Login</Link>
+          <Link to={'/register'}>Register</Link>
+        </div>
+      ) : (
+        <button className="btn-logout" onClick={handleLogout}>
+          Logout
+        </button>
+      )}
     </div>
   );
 };

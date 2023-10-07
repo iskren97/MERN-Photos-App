@@ -62,3 +62,13 @@ code {
   cursor: pointer;
   margin-top: 25px;
 }
+
+.btn-logout {
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 18px;
+}
