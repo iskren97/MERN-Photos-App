@@ -1,28 +1,21 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useFetchData from '../hooks/useFetchData';
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
+  const { data, isFetching } = useFetchData('/users');
 
-  const fetchUsers = async (e) => {
-    try {
-      const { data } = await axios.get('/users');
-      setUsers(data);
-    } catch (error) {}
-  };
-
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  if (isFetching) {
+    return <h1>Loading ...</h1>;
+  }
 
   return (
     <>
       <h1>Users</h1>
 
       <ul>
-        {users.length > 0 ? (
-          users.map((user) => {
-            return <li>{user.email}</li>;
+        {data?.length > 0 ? (
+          data.map((user) => {
+            return <li key={user._id}>{user.email}</li>;
           })
         ) : (
           <h2>No users yet...</h2>

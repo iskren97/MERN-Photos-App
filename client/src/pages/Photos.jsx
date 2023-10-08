@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import useFetchData from '../hooks/useFetchData';
 
 const Photos = () => {
-  const [photos, setPhotos] = useState([]);
+  const { data, isFetching } = useFetchData('/photos');
 
-  const fetchPhotos = async (e) => {
-    try {
-      const { data } = await axios.get('/photos');
-      setPhotos(data);
-    } catch (error) {}
-  };
-
-  useEffect(() => {
-    fetchPhotos();
-  }, []);
+  if (isFetching) {
+    return <h1>Loading ...</h1>;
+  }
 
   return (
     <>
       <h1>Photos</h1>
 
       <ul>
-        {photos.length > 0 ? (
-          photos.map((photo) => {
-            return <img src={photo.imgUrl} alt="img" />;
+        {data?.length > 0 ? (
+          data.map((photo) => {
+            return (
+              <img
+                key={photo._id}
+                style={{
+                  width: '200px',
+                  height: '200px',
+                  objectFit: 'contain',
+                }}
+                src={photo.imgUrl}
+                alt="img"
+              />
+            );
           })
         ) : (
           <h2>No photos yet...</h2>
