@@ -17,7 +17,7 @@ const Profile = () => {
         console.error(error);
       })
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [user._id]);
 
   const handlePhotoDelete = (photoID) => {
     setIsLoading(true);

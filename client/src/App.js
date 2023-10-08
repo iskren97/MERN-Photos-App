@@ -12,6 +12,7 @@ import Protected from './components/Protected';
 import { useCookies } from 'react-cookie';
 
 const App = () => {
+  // eslint-disable-next-line
   const [cookies, _] = useCookies(['access_token']);
 
   return (
