@@ -23,7 +23,6 @@ const Login = () => {
       });
 
       setCookies('access_token', response.data.token);
-      window.localStorage.setItem('userID', response.data.user._id);
       window.localStorage.setItem(
         'currentUser',
         JSON.stringify(response.data.user)
