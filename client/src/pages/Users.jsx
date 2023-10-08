@@ -18,7 +18,7 @@ const Users = () => {
   console.log(users);
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <>
       <h1>Users</h1>
 
       <ul>
@@ -26,7 +26,7 @@ const Users = () => {
           return <li>{user.email}</li>;
         })}
       </ul>
-    </div>
+    </>
   );
 };
 

@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <>
       <Form
         label={'Login'}
         email={email}
@@ -45,7 +45,7 @@ const Login = () => {
         setPassword={handlePasswordChange}
         handleSubmit={handleSubmit}
       />
-    </div>
+    </>
   );
 };
 

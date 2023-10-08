@@ -17,7 +17,7 @@ const Photos = () => {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <>
       <h1>Photos</h1>
 
       <ul>
@@ -25,7 +25,7 @@ const Photos = () => {
           return <img src={photo.imgUrl} alt="" srcset="" />;
         })}
       </ul>
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IndexPage = () => {
-  return <div>Index</div>;
+  return <h1>Index</h1>;
 };
 
 export default IndexPage;
