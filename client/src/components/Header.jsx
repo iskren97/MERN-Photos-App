@@ -12,8 +12,6 @@ const Header = () => {
     navigate('/login');
   };
 
-  console.log(cookies);
-
   return (
     <div className="header">
       <h1>App Name</h1>
