@@ -17,12 +17,8 @@ const Photos = () => {
           data.map((photo) => {
             return (
               <img
+                className="photo"
                 key={photo._id}
-                style={{
-                  width: '200px',
-                  height: '200px',
-                  objectFit: 'contain',
-                }}
                 src={photo.imgUrl}
                 alt="img"
               />

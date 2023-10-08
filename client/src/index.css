@@ -73,3 +73,24 @@ code {
   border-radius: 10px;
   font-size: 18px;
 }
+
+.profile-photo-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-inner-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border: 2px solid black;
+}
