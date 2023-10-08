@@ -15,16 +15,18 @@ const Users = () => {
     fetchUsers();
   }, []);
 
-  console.log(users);
-
   return (
     <>
       <h1>Users</h1>
 
       <ul>
-        {users.map((user) => {
-          return <li>{user.email}</li>;
-        })}
+        {users.length > 0 ? (
+          users.map((user) => {
+            return <li>{user.email}</li>;
+          })
+        ) : (
+          <h2>No users yet...</h2>
+        )}
       </ul>
     </>
   );

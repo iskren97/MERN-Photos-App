@@ -7,7 +7,6 @@ const Photos = () => {
   const fetchPhotos = async (e) => {
     try {
       const { data } = await axios.get('/photos');
-      console.log(data);
       setPhotos(data);
     } catch (error) {}
   };
@@ -21,9 +20,13 @@ const Photos = () => {
       <h1>Photos</h1>
 
       <ul>
-        {photos.map((photo) => {
-          return <img src={photo.imgUrl} alt="" srcset="" />;
-        })}
+        {photos.length > 0 ? (
+          photos.map((photo) => {
+            return <img src={photo.imgUrl} alt="img" />;
+          })
+        ) : (
+          <h2>No photos yet...</h2>
+        )}
       </ul>
     </>
   );
