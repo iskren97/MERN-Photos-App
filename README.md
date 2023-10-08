@@ -6,10 +6,10 @@
 
 ## Installation
 
-1. Clone the repo from [GitLab](https://gitlab.com/iskren97/mern-photos-app)
+1. Clone the repo from [GitHub](https://github.com/iskren97/MERN-Photos-App)
 
 ```sh
-git clone https://gitlab.com/iskren97/mern-photos-app.git
+git clone https://github.com/iskren97/MERN-Photos-App.git
 ```
 
 2. Open **server** folder
