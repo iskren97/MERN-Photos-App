@@ -28,4 +28,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  const _id = req.params.id;
+
+  try {
+    const photos = await PhotoModel.find({ userOwner: _id });
+
+    if (!photos) {
+      return res.status(404).send();
+    }
+
+    res.send(photos);
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
 export { router as photoRouter };
