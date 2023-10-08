@@ -20,7 +20,6 @@ const ImageUpload = () => {
         imgUrl: imageUrl,
         userOwner: user._id,
       });
-      console.log(resp);
     } catch (error) {}
   };
 
