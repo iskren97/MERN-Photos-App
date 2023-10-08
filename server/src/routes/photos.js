@@ -44,4 +44,20 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const photo = await PhotoModel.findOneAndDelete({
+      _id: req.params.id,
+    });
+
+    if (!photo) {
+      res.status(404).send();
+    }
+
+    res.send(photo);
+  } catch (e) {
+    res.status(500).send();
+  }
+});
+
 export { router as photoRouter };
