@@ -16,10 +16,12 @@ const ImageUpload = () => {
     e.preventDefault();
 
     try {
-      const resp = await axios.post('/photos/upload', {
+      await axios.post('/photos/upload', {
         imgUrl: imageUrl,
         userOwner: user._id,
       });
+
+      alert('Success!');
     } catch (error) {}
   };
 
